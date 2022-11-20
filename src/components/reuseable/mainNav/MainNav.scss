@@ -1,0 +1,22 @@
+
+
+.navLinks {
+    a {
+        text-decoration: none;
+        color: #000;
+        margin: 0 5px;
+        padding: 10px 25px;
+        border-radius: 5px;
+        font-size: 22px;
+        font-weight: 500;
+
+        &:hover {
+            background-color: #091731;
+            transition: 0.2s all ease-in-out;
+            color: #fff;
+        }
+    }
+    .nav-active {
+        color: #08a808;
+    }
+}
