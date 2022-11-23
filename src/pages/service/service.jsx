@@ -8,15 +8,30 @@ const Service = () => {
         setUserInfo({ ...userInfo, [e.target.name]: e.target.value })
     }
 
+    const passValidation = () => {
+        const splitVal = userInfo?.password.split('');
+        for (let i = 0; i < splitVal.length; i++) {
+            if (splitVal[i] === '0') {
+                splitVal[i] = 'zero';
+            } else if (splitVal[i] === '1') {
+                splitVal[i] = 'one';
+            } else if (splitVal[i] === '2') {
+                splitVal[i] = 'two';
+            }
+
+        }
+        const pass = splitVal.toString();
+        const changeVal = pass.replaceAll(',', '')
+        const newUserInfo = { ...userInfo, password: changeVal };
+
+        return newUserInfo;
+    };
+
     const submitBtn = () => {
-        console.log('sub top', userInfo);
-
-        const changePase = "abuonetowthree";
-
-        setUserInfo({ ...userInfo, password: changePase });
+        const validateUser = passValidation();
+        console.log(validateUser);
     }
 
-    console.log(userInfo);
     /**
      *  pass box input 
         123 : onetowthree
